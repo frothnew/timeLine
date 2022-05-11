@@ -117,6 +117,17 @@
 					}
 				})
 				
+				// mySubmit
+				$("#mySubmit").on("click",function(){
+					if($("#myPassword").val() == "220217"){
+						$("body").attr("isshow","show");
+						setTimeout(function(){
+							$("body").attr("isshows","show");
+						},1000)
+					}else{
+						$("body").html("<div>终究是没有默契啊</div>").addClass("error");
+					}
+				})
 				
 				//////////////////////////////////////////////////////////////////////////
 				// proccess
