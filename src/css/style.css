@@ -410,9 +410,19 @@ body.error div{
 .timeline .timeline-row .timeline-content ul {
 	margin-bottom: 15px;
 }
-
 .timeline .timeline-row .timeline-content img {
+	display: block;
 	max-width: 100%;
+}
+
+.timeline .timeline-row .timeline-content ul.picture li{
+	opacity: 0;
+	width: 0;
+	transition:  all 2s;
+}
+.timeline .timeline-row .timeline-content ul.picture li.on{
+	width: 100%;
+	opacity: 1;
 }
 
 .timeline .timeline-row .timeline-content blockquote {

@@ -48,11 +48,10 @@
 					if(value.images){
 						timelineHtml += '<ul class="picture">';
 						$.each(value.images, function (idx, val) {
-							if(idx == 0){
-								timelineHtml += '<li>';
-								timelineHtml += '<img src="'+val+'">';
-								timelineHtml += '</li>';
-							}
+							var showClass = idx == 0 ? "on" : "";
+							timelineHtml += '<li class="'+showClass+'">';
+							timelineHtml += '<img src="'+val+'">';
+							timelineHtml += '</li>';
 						})
 						timelineHtml += '</ul>';
 					}
@@ -128,6 +127,24 @@
 						$("body").html("<div>终究是没有默契啊</div>").addClass("error");
 					}
 				})
+				
+				// picture
+				$(document).on('click','.picture li',function(){
+					var idx = $(this).index();
+					var length = $(this).parents(".picture").find("li").length;
+					if(length != 1){
+						var idxNext = 0;
+						if (idx + 1 <= length-1) {
+							idxNext = idx + 1;
+						} else{
+							idxNext = 0;
+						}
+						$(this).parents(".picture").find("li").removeClass("on");
+						$(this).parents(".picture").find("li").eq(idxNext).addClass("on");
+					}
+				});
+
+
 				
 				//////////////////////////////////////////////////////////////////////////
 				// proccess
