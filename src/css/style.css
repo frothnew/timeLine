@@ -6,24 +6,15 @@
 }
 
 @font-face {
-    font-family: 'qingsong';
-    src: url('../fonts/QingSongShouXieTi2-2.ttf') format('truetype');
-}
-@font-face {
     font-family: 'shufa';
     src: url('../fonts/YangRenDongZhuShiTi-Regular-2.ttf') format('truetype');
 }
 body {
 	background-color: #fff;
 	font-size: 15px;
-	padding: 1em 0;
+	padding: 0;
 	margin: 0;
 	position: relative;
-}
-body[font="qingsong"]{
-	font-family: 'qingsong';
-}
-body[font="shufa"]{
 	font-family: 'shufa';
 }
 
@@ -131,7 +122,13 @@ input{
 	-webkit-tap-highlight-color: rgba(0,0,0,0);
 	box-shadow: 0;
 }
-
+.iconfont {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
 
 /*----------------------------------------------------------------------------------- */
 /*  Panels */
@@ -171,20 +168,23 @@ input{
 	opacity: 1;
 	transition: all 0.3s;
 }
+.authentication[isdialog="true"] .author-content{
+	-webkit-filter: blur(15px);
+	filter: blur(15px);
+}
 .authentication #myPassword{
 	display: block;
-	width: 60%;
-	height: 50px;
-	line-height: 48px;
+	width: 150px;
+	height: 150px;
+	line-height: 150px;
 	box-sizing: border-box;
-	margin-bottom: 20px;
-	border: 1px solid #7b8b6f;
-	padding: 10px;
-	background-color: transparent;
-	letter-spacing: 4px;
+	border-radius: 50%;
+	border: 1px solid rgba(20, 46, 0, 0.5);
+	border-bottom: 0;
+	border-right: 0;
+	background: linear-gradient(120deg, rgba(255,255,255, 0.5) 18%, rgb(255,255,255,0) 80%);
 	text-align: center;
-	font-size: 16px;
-	color: #fff;
+	font-size: 100px;
 }
 .authentication #myPassword:-internal-autofill-selected{
 	background-color: transparent!important;
@@ -206,32 +206,27 @@ input{
 	font-size: 14px;
 	color: #fff;
 }
-body[isshow="hide"] .authentication{
+body[isshow="false"]{
+	position: fixed;
+	left: 0;
+	top: 0;
+}
+body[isshow="false"] .authentication{
 	opacity: 1;
-	transition: all 1s;
 }
-body[isshows="hide"] .authentication{
+body[isshows="false"] .authentication{
 	display: flex;
-	transition: all 1s;
 }
-body[isshow="show"] .authentication{
+body[isshow="true"]{
+	position: static;
+}
+body[isshow="true"] .authentication{
 	opacity: 0;
 }
-body[isshows="show"] .authentication{
+body[isshows="true"] .authentication{
 	display: none;
 }
-body.error div{
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	font-size: 16px;
-	font-style: italic;
-}
+
 /* bgHeart */
 #bgHeart{
 	position: fixed;
@@ -240,21 +235,6 @@ body.error div{
 	width: 100%;
 	height: 100%;
 	z-index: -2;
-}
-/* font */
-.btn-font-change{
-    position: fixed;
-    z-index: 99;
-    top: -8px;
-    right: -8px;
-    width: 50px;
-    height: 50px;
-    border-radius: 41% 0 40% 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-	background-color: rgba(0,0,0,0.1);
-	color: #7b8b6f;
 }
 /* info */
 .info{

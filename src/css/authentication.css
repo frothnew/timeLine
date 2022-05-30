@@ -1,0 +1,138 @@
+.author-dialog {
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+
+.author-box {
+	position: fixed;
+	z-index: 400;
+	width: 90%;
+	left: 5%;
+	bottom: -100%;
+	-moz-transition: all 0.5s;
+	-webkit-transition: all 0.5s;
+	-o-transition: all 0.5s;
+	transition: all 0.5s;
+}
+
+[isdialog="true"] .author-box {
+	bottom: 20%;
+}
+
+.pb-empty i {
+	font-size: 25px;
+}
+
+.pb-title {
+	font-size: 16px;
+	text-align: center;
+	margin-top: 20px;
+	color: rgba(20, 46, 0, 1);
+	position: relative;
+}
+
+.pb-int {
+	text-align: center;
+	margin-top: 20px;
+}
+
+.pb-int span {
+	width: 40px;
+	height: 50px;
+	border-bottom: 2px solid rgba(20, 46, 0, 0.2);
+	margin: 0 6px;
+	font-size: 20px;
+}
+
+.pb-int span img {
+	width: 20px;
+	height: 20px;
+}
+
+.pb-keyboard {
+	margin-top: 40px;
+}
+
+.pb-keyboard>span {
+	margin-bottom: 30px;
+	width: 30%;
+	height: 60px;
+	line-height: 60px;
+	font-size: 25px;
+	text-align: center;
+	border-radius: 60px;
+	color: rgba(20, 46, 0, 1);
+}
+
+.pb-keyboard .figure:active {
+	background: rgba(10,26, 0, 0.1);
+}
+.pb-keyboard .pb-empty span {
+	font-size: 20px;
+	position: relative;
+	bottom: 6px;
+}
+.pb-keyboard .pb-empty,
+.pb-keyboard .pb-del {
+	background: rgba(10,26, 0, 0.2);
+	color: rgba(255,255,255,0.5);
+}
+
+.pb-keyboard .pb-del i {
+	font-size: 25px;
+	position: relative;
+	bottom: 1px;
+}
+
+.author-box-shadow {
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 300;
+	background: linear-gradient(120deg, rgba(255,255,255, 0.2) 20%, rgb(14 116 33 / 50%) 80%);
+	display: none;
+}
+
+.flex {
+	display: box;
+	display: -webkit-box;
+	display: -moz-box;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	display: flex;
+}
+
+.flex-wrap {
+	-webkit-flex-wrap: wrap;
+	-moz-flex-wrap: wrap;
+	-ms-flex-wrap: wrap;
+	-o-flex-wrap: wrap;
+	flex-wrap: wrap;
+}
+
+.flex-center {
+	-webkit-justify-content: center;
+	-moz-justify-content: center;
+	-ms-justify-content: center;
+	-o-justify-content: center;
+	justify-content: center;
+}
+
+.flex-space {
+	-webkit-justify-content: space-between;
+	-moz-justify-content: space-between;
+	-ms-justify-content: space-between;
+	-o-justify-content: space-between;
+	justify-content: space-between;
+}
+
+.align-center {
+	-webkit-align-items: center;
+	-moz-align-items: center;
+	-ms-align-items: center;
+	-o-align-items: center;
+	align-items: center;
+}
