@@ -172,7 +172,7 @@ input{
 	-webkit-filter: blur(15px);
 	filter: blur(15px);
 }
-.authentication #myPassword{
+.authentication .myPassword{
 	display: block;
 	width: 150px;
 	height: 150px;
@@ -186,26 +186,33 @@ input{
 	text-align: center;
 	font-size: 100px;
 }
-.authentication #myPassword:-internal-autofill-selected{
+.authentication .myPassword:-internal-autofill-selected{
 	background-color: transparent!important;
 }
-.authentication #myPassword::-webkit-input-placeholder {
+.authentication .myPassword::-webkit-input-placeholder {
 	color: #fff;
 	font-size: 14px;
 }
-.authentication #mySubmit{
-	display: block;
-	width: 60%;
-	height: 50px;
-	line-height: 48px;
-	box-sizing: border-box;
-	border: 1px solid #7b8b6f;
-	border-radius: 50px;
-	background-color: rgba(123,139,111,0.8);
-	text-align: center;
-	font-size: 14px;
-	color: #fff;
+.authentication .myPassword svg{
+	animation: ghostUpdown 3s ease-out infinite;
+	-webkit-animation: ghostUpdown 3s ease-out infinite;
 }
+@keyframes ghostUpdown{
+	0%{transform:rotateY(0deg)}
+	25%{transform:rotateY(360deg)}
+	50%{transform:rotateY(360deg)}
+	75%{transform:rotateY(0deg)}
+	100%{transform:rotateY(0deg)}
+}
+@-webkit-keyframes ghostUpdown{
+	0%{transform:rotateY(0deg)}
+	25%{transform:rotateY(360deg)}
+	50%{transform:rotateY(360deg)}
+	75%{transform:rotateY(0deg)}
+	100%{transform:rotateY(0deg)}
+}
+
+
 body[isshow="false"]{
 	position: fixed;
 	left: 0;
@@ -274,7 +281,7 @@ body[isshows="true"] .authentication{
 	color: #7b8b6f;
 	font-weight: bold;
 }
-.prelude ul li i{
+.prelude ul li .iconfont{
 	margin-right: 10px;
 }
 
@@ -324,7 +331,7 @@ body[isshows="true"] .authentication{
 	font-size: 11px;
 	font-weight: 400;
 }
-.timeline .timeline-row .timeline-time small i{
+.timeline .timeline-row .timeline-time small .iconfont{
 	margin-right: 5px;
 }
 
@@ -335,21 +342,18 @@ body[isshows="true"] .authentication{
 	margin-left: -20px;
 	width: 40px;
 	height: 40px;
+	line-height: 40px;
 	border-radius: 50%;
-	background-color: #fffaf4;
 	text-align: center;
-	box-shadow: 1px 2px 0px rgb(123 139 111 / 30%);
 	overflow: hidden;
 	padding: 3px;
 	color: white;
-	font-size: 14px;
 	z-index: 98;
 }
 
-.timeline .timeline-row .timeline-icon>div {
-	border-radius: 50%;
-	line-height: 40px;
-	font-size: 16px;
+.timeline .timeline-row .timeline-icon .iconfont{
+	width: 100%;
+	height: 100%;
 }
 
 .timeline .timeline-row .timeline-content {

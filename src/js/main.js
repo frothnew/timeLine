@@ -55,12 +55,10 @@
 					// time
 					timelineHtml += '<div class="timeline-time">';
 					timelineHtml += '<span>' + value.date + '</span>';
-					var add = value.add ? '<i class="fa fa-location-arrow"></i>' + value
+					var add = value.add ? '<svg class="iconfont" aria-hidden="true"><use xlink:href="#icon-address"></use></svg>' + value
 						.add : "-";
 					timelineHtml += '<small>' + add + '</small>';
 					timelineHtml += '</div>';
-					// icon
-					timelineHtml += '<div class="timeline-icon">';
 					// randomBg
 					var ranNum = Math.random();
 					if (ranNum < 0.5) {
@@ -69,10 +67,12 @@
 						ranNum = ranNum - 0.1;
 					}
 					ranNum = ranNum.toFixed(2);
-					var randomBg = "rgb(123,139,111," + ranNum + ")"
-					timelineHtml += '<div style="background-color:' + randomBg + '">';
-					timelineHtml += '<i class="fa fa-pencil"></i>';
-					timelineHtml += '</div>';
+					var randomBg = "rgb(123,139,111," + ranNum + ")";
+					// icon
+					timelineHtml += '<div class="timeline-icon" style="background-color:' + randomBg + '">';
+					var weekday = moment(value.date, "YY-MM-DD").weekday();
+					var arrWeek = ["xingqi7","xingqi1","xingqi2","xingqi3","xingqi4","xingqi5","xingqi6"];
+					timelineHtml += '<svg class="iconfont" aria-hidden="true"><use xlink:href="#icon-'+arrWeek[weekday]+'"></use></svg>';
 					timelineHtml += '</div>';
 					// content
 					timelineHtml += '<div class="panel timeline-content">';
@@ -124,7 +124,7 @@
 				$.each(data.prelude, function(index, value) {
 					if (value.key == "finally") {
 						preludeHtml += '<li>';
-						preludeHtml += '<i class="fa fa-commenting-o"></i>';
+						preludeHtml += '<svg class="iconfont" aria-hidden="true"><use xlink:href="#icon-wechat"></use></svg>';
 						preludeHtml += value.date;
 						preludeHtml += '</li>';
 					}
@@ -134,6 +134,13 @@
 				// times
 				var times = data.date.length;
 				$(".info .info-times").html(times);
+				
+				// lastday
+				var slasttime = $(".timeline-time:first").children("span").text();
+				var lastTime = moment(slasttime, "YY-MM-DD");
+				var now = moment();
+				var lastday = now.diff(lastTime, "days");
+				$(".info .info-lastday").html(lastday);
 
 				// picture
 				$(".timeline-row").on('click', '.picture li', function() {
@@ -150,6 +157,7 @@
 						$(this).parents(".picture").find("li").eq(idxNext).addClass("on");
 					}
 				});
+				
 
 
 				// ******************************

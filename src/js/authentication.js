@@ -2,21 +2,35 @@ function authorDialog(callback,container) {
 	/*创建元素*/
 	var $div = $('.author-box');
 	if (!$div.length) {
-		var html = '<div class="author-dialog">'+
-			'<div class="author-box">'+
-				'<div class="pb-title"></div>'+
-				'<div class="pb-int flex flex-center align-center">'+
-					'<span class="flex flex-center align-center"></span><span class="flex flex-center align-center"></span><span class="flex flex-center align-center"></span><span class="flex flex-center align-center"></span><span class="flex flex-center align-center"></span><span class="flex flex-center align-center"></span>'+
-				'</div>'+
-				'<div class="pb-keyboard flex flex-wrap flex-space align-center">'+
-					'<span class="figure">1</span><span class="figure">2</span><span class="figure">3</span><span class="figure">4</span><span class="figure">5</span><span class="figure">6</span><span class="figure">7</span><span class="figure">8</span><span class="figure">9</span>'+
-					'<span class="pb-empty"><svg class="iconfont" aria-hidden="true"><use xlink:href="#icon-clear"></use></svg></span>'+
-					'<span class="figure">0</span>'+
-					'<span class="pb-del"><svg class="iconfont" aria-hidden="true"><use xlink:href="#icon-delete"></use></svg></span>'+
-				'</div>'+
-			'</div>'+
-			'<div class="author-box-shadow"></div>'+
-		'</div>';
+		var html = '';
+		html += '<div class="author-dialog">';
+		html += '<div class="author-box">';
+		html += '<div class="pb-title"></div>';
+		html += '<div class="pb-int flex flex-center align-center">';
+		html += '<span class="flex flex-center align-center"></span>';
+		html += '<span class="flex flex-center align-center"></span>';
+		html += '<span class="flex flex-center align-center"></span>';
+		html += '<span class="flex flex-center align-center"></span>';
+		html += '<span class="flex flex-center align-center"></span>';
+		html += '<span class="flex flex-center align-center"></span>';
+		html += '</div>';
+		html += '<div class="pb-keyboard flex flex-wrap flex-space align-center">';
+		html += '<span class="figure">1</span>';
+		html += '<span class="figure">2</span>';
+		html += '<span class="figure">3</span>';
+		html += '<span class="figure">4</span>';
+		html += '<span class="figure">5</span>';
+		html += '<span class="figure">6</span>';
+		html += '<span class="figure">7</span>';
+		html += '<span class="figure">8</span>';
+		html += '<span class="figure">9</span>';
+		html += '<span class="pb-empty"><svg class="iconfont" aria-hidden="true"><use xlink:href="#icon-clear"></use></svg></span>';
+		html += '<span class="figure">0</span>';
+		html += '<span class="pb-del"><svg class="iconfont" aria-hidden="true"><use xlink:href="#icon-delete"></use></svg></span>';
+		html += '</div>';
+		html += '</div>';
+		html += '<div class="author-box-shadow"></div>';
+		html += '</div>';
 		$(container).append(html);
 	}
 
